@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body{
+  cursor: none;
+}
+button{
+  cursor: none;
+}
+.black{
+  background-color: #000;
+  color: #fff;
+}
+.white{
+  background-color: rgb(182, 231, 46);
+  color: #000;
+}
+.nobi{
+  height: 200px;
+  position: absolute;
+  pointer-events: none;
+}

@@ -1,0 +1,6 @@
+reactjs - librarary of JS
+gsap (moving animation)
+lenis (scrolling smothness)
+swiper (sliders)
+three (3d)
+React js  
