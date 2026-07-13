@@ -2,6 +2,7 @@
 
 body{
   cursor: none;
+  overflow: hidden;
 }
 button{
   cursor: none;
