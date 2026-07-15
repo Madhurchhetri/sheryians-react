@@ -4,6 +4,9 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Recipes from '../pages/Recipes'
 import Create from '../pages/Create'
+import SingleRecipe from '../pages/SingleRecipe'
+import Fav from '../pages/Fav'
+import PageNotFound from '../pages/PageNotFound'
 
 const MainRoutes = () => {
     
@@ -13,6 +16,9 @@ const MainRoutes = () => {
         <Route path = "/about" element = {<About/>} />
         <Route path = "/recipes" element = {<Recipes/>} />
         <Route path = "/create-recipe" element = {<Create/>} />
+        <Route path = "/recipes/details/:id" element = {<SingleRecipe/>}/>
+        <Route path = "/fav" element = {<Fav/>} />
+        <Route path = "*" element = {<PageNotFound/>} />
     </Routes>
   )
 }
