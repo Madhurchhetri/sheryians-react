@@ -9,15 +9,20 @@ const CTA = () => {
   const sectionRef = useRef();
 
   useEffect(() => {
-    gsap.from(sectionRef.current, {
+    gsap.fromTo(sectionRef.current, {
       opacity: 0,
-      scale: 0.9,
+      scale: 0.95,
+    }, {
+        opacity: 1,
+      scale: 1.1,
       duration: 1,
       ease: "power3.out",
 
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 75%",
+        end: "bottom 30%",
+        scrub: true,
       },
     });
   }, []);

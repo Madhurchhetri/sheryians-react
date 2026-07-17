@@ -42,9 +42,9 @@ const Footer = () => {
 
             <Link to="/recipes">Recipes</Link>
 
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/fav">Favorites</Link>
 
-            <Link to="/create">Create Recipe</Link>
+            <Link to="/create-recipe">Create Recipe</Link>
 
           </div>
 

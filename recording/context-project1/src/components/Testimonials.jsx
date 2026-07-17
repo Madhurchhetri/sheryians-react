@@ -32,7 +32,7 @@ const Testimonials = () => {
   const sectionRef = useRef();
 
   useEffect(() => {
-    gsap.from(".review-card", {
+    gsap.fromTo(".review-card", {
       opacity: 0,
       y: 80,},
       {
@@ -45,6 +45,8 @@ const Testimonials = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
+        end: "bottom 40%",
+        scrub: true,
       },
     });
   }, []);

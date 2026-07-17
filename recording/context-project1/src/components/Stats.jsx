@@ -46,7 +46,7 @@ const countersRef = useRef([]);
   cardsRef.current,
     {
         opacity: 0,
-        y: 80,
+        y: 90,
     },
   {
     opacity: 1,
@@ -56,8 +56,10 @@ const countersRef = useRef([]);
     ease: "power3.out",
     scrollTrigger: {
       trigger: sectionRef.current,
-      start: "top 80%",
-      once: true,
+      start: "top 70%",
+      end: "bottom 20%",
+      scrub: true,
+    
     },
     clearProps: "opacity,transform",
   }
@@ -78,8 +80,9 @@ const countersRef = useRef([]);
           },
           scrollTrigger: {
             trigger: cardsRef.current[index],
-            start: "top 85%",
-            once: true,
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: true,
           },
         }
       );

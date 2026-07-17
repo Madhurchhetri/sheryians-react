@@ -164,18 +164,20 @@ const Categories = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".category-card", {
+      gsap.fromTo(".category-card", {
         opacity: 0,
-        y: 80,},{
-            opacity: 1,
+        y: 80,
+      }, {
+        opacity: 1,
         y: 0,
         duration: 0.8,
         stagger: 0.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
-          once: true,
+          start: "top 70%",
+          end: "bottom 40%",
+          scrub: true,
         },
         clearProps: "opacity,transform",
       });

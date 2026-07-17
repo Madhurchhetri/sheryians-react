@@ -14,19 +14,29 @@ const FeaturedRecipes = () => {
   const featuredRecipes = data.slice(0, 4);
 
   useEffect(() => {
-    gsap.from(".featured-card", {
-      opacity: 0,
-      y: 100,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: "power3.out",
+    if (!featuredRecipes.length) return;
 
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-      },
-    });
-  }, []);
+    const ctx = gsap.context(() => {
+      gsap.from(".featured-card", {
+        opacity: 0,
+        y: 100,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power3.out",
+        clearProps: "opacity,transform",
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      ScrollTrigger.refresh();
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [featuredRecipes]);
 
   return (
     <section
@@ -36,7 +46,6 @@ const FeaturedRecipes = () => {
       <div className="flex flex-col lg:flex-row justify-between items-center mb-16">
 
         <div>
-
           <span className="uppercase tracking-[5px] text-orange-500 font-semibold">
             Featured Recipes
           </span>
@@ -44,7 +53,6 @@ const FeaturedRecipes = () => {
           <h2 className="text-5xl font-black mt-4">
             Fresh From Our Kitchen
           </h2>
-
         </div>
 
         <Link
@@ -53,11 +61,9 @@ const FeaturedRecipes = () => {
         >
           View All Recipes →
         </Link>
-
       </div>
 
       {featuredRecipes.length === 0 ? (
-
         <div className="rounded-3xl border border-dashed border-zinc-700 bg-zinc-900 py-20 text-center">
 
           <div className="text-7xl mb-6">
@@ -80,9 +86,7 @@ const FeaturedRecipes = () => {
           </Link>
 
         </div>
-
       ) : (
-
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
 
           {featuredRecipes.map((recipe) => (
@@ -102,15 +106,11 @@ const FeaturedRecipes = () => {
                 />
 
                 <span className="absolute top-4 left-4 bg-orange-500 px-4 py-1 rounded-full text-sm">
-
                   {recipe.category}
-
                 </span>
 
-                <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md w-12 h-12 rounded-full flex justify-center items-center">
-
+                <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md w-12 h-12 rounded-full flex justify-center items-center text-xl">
                   {recipe.isFavorite ? "❤️" : "🤍"}
-
                 </span>
 
               </div>
@@ -118,35 +118,25 @@ const FeaturedRecipes = () => {
               <div className="p-6">
 
                 <h3 className="text-2xl font-bold">
-
                   {recipe.title}
-
                 </h3>
 
                 <p className="text-gray-400 mt-2">
-
                   👨‍🍳 {recipe.chefName}
-
                 </p>
 
                 <p className="line-clamp-2 mt-5 text-gray-500">
-
                   {recipe.description}
-
                 </p>
 
                 <div className="flex justify-between mt-6 text-sm">
 
                   <span className="bg-zinc-800 px-3 py-2 rounded-lg">
-
-                    ⭐ {recipe.difficulty}
-
+                    ⭐ {recipe.difficulty || "Easy"}
                   </span>
 
                   <span className="bg-zinc-800 px-3 py-2 rounded-lg">
-
-                    ⏱ {recipe.cookingTime}
-
+                    ⏱ {recipe.cookingTime || "15 min"}
                   </span>
 
                 </div>
@@ -158,9 +148,7 @@ const FeaturedRecipes = () => {
           ))}
 
         </div>
-
       )}
-
     </section>
   );
 };
