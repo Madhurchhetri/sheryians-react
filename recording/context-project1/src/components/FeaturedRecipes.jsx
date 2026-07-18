@@ -79,7 +79,7 @@ const FeaturedRecipes = () => {
           </p>
 
           <Link
-            to="/create"
+            to="/create-recipe"
             className="inline-block mt-8 bg-orange-500 px-7 py-3 rounded-xl hover:bg-orange-600"
           >
             Create Recipe
