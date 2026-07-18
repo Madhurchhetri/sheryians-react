@@ -63,7 +63,7 @@ const CTA = () => {
           <div className="flex flex-wrap justify-center gap-5 mt-12">
 
             <Link
-              to="/create"
+              to="/create-recipe"
               className="px-8 py-4 rounded-xl bg-white text-black font-bold hover:scale-105 duration-300"
             >
               ➕ Create Recipe

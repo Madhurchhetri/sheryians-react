@@ -61,14 +61,18 @@ const Footer = () => {
           </h3>
 
           <div className="flex gap-5 text-3xl">
-
+            <Link to ="https://www.facebook.com/bizzi.keta" target="_blank">
             <i className="ri-facebook-circle-fill hover:text-blue-500 duration-300 cursor-pointer"></i>
-
+            </Link>
+            <Link to="https://www.instagram.com/chhetr96/" target="_blank">
             <i className="ri-instagram-fill hover:text-pink-500 duration-300 cursor-pointer"></i>
-
+            </Link>
+            <Link to="https://x.com/madhur_chh25405" target="_blank">
             <i className="ri-twitter-x-fill hover:text-white duration-300 cursor-pointer"></i>
-
+            </Link>
+            <Link to="https://github.com/Madhurchhetri" target="_blank" rel="noopener noreferrer">
             <i className="ri-github-fill hover:text-gray-300 duration-300 cursor-pointer"></i>
+            </Link>
 
           </div>
 
