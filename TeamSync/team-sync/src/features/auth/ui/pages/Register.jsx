@@ -33,7 +33,7 @@ const Register = () => {
             {/* Logo */}
 
             <h1 className="text-4xl font-bold text-white">
-              Synthetix AI
+              Team Sync
             </h1>
 
             {/* Bottom Content */}
@@ -342,7 +342,7 @@ const Register = () => {
           {/* Logo */}
 
           <h2 className="text-3xl font-bold text-white">
-            Synthetix AI
+            Team Sync
           </h2>
 
           {/* Links */}

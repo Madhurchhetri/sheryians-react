@@ -1,1 +1,130 @@
 @import "tailwindcss";
+
+/* ===========================
+   DARK THEME (DEFAULT)
+=========================== */
+
+:root {
+  /* Base */
+  --background: #141218;
+  --surface: #141218;
+  --surface-dim: #141218;
+  --surface-bright: #3b383e;
+
+  --surface-container-lowest: #0f0d13;
+  --surface-container-low: #1d1b20;
+  --surface-container: #211f24;
+  --surface-container-high: #2b292f;
+  --surface-container-highest: #36343a;
+  --surface-variant: #36343a;
+
+  --text-primary: #e6e0e9;
+  --text-secondary: #cbc4d2;
+
+  --primary: #cfbcff;
+  --primary-container: #6750a4;
+
+  --secondary: #cdc0e9;
+  --secondary-container: #4d4465;
+
+  --tertiary: #e7c365;
+  --tertiary-container: #c9a74d;
+
+  --error: #ffb4ab;
+  --error-container: #93000a;
+
+  --outline: #948e9c;
+  --outline-variant: #494551;
+
+  /* Aliases */
+  --bg: var(--background);
+  --bg-surface: var(--surface);
+  --bg-card: var(--surface-container);
+  --bg-card-hover: var(--surface-container-high);
+
+  --text: var(--text-primary);
+  --text-muted: var(--text-secondary);
+
+  --border: var(--outline);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Font */
+  --font-family: "Inter", sans-serif;
+
+  --transition: all .3s ease;
+}
+
+/* ===========================
+   LIGHT THEME
+=========================== */
+
+.light {
+  --background: #fcf8ff;
+  --surface: #fcf8ff;
+  --surface-dim: #dbd8e4;
+  --surface-bright: #fcf8ff;
+
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f2fe;
+  --surface-container: #efecf8;
+  --surface-container-high: #e9e6f3;
+  --surface-container-highest: #e4e1ed;
+  --surface-variant: #e4e1ed;
+
+  --text-primary: #1b1b23;
+  --text-secondary: #464554;
+
+  --primary: #4648d4;
+  --primary-container: #6063ee;
+
+  --secondary: #505f76;
+  --secondary-container: #d0e1fb;
+
+  --tertiary: #904900;
+  --tertiary-container: #b55d00;
+
+  --error: #ba1a1a;
+  --error-container: #ffdad6;
+
+  --outline: #767586;
+  --outline-variant: #c7c4d7;
+
+  /* Aliases */
+  --bg: var(--background);
+  --bg-surface: var(--surface);
+  --bg-card: var(--surface-container);
+  --bg-card-hover: var(--surface-container-high);
+
+  --text: var(--text-primary);
+  --text-muted: var(--text-secondary);
+
+  --border: var(--outline);
+}
+
+/* ===========================
+   GLOBAL
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family);
+  transition: var(--transition);
+}

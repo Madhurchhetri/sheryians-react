@@ -1,30 +1,60 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Login from '../../features/auth/ui/pages/Login'
-import Register from '../../features/auth/ui/pages/Register'
-import DashBoardLayout from '../layouts/DashBoardLayout'
-import Home from '../../features/dashboard/ui/pages/Home'
-import AuthLayout from '../layouts/AuthLayout'
-import PublicRoute from '../protectedRoutes/PublicRoute'
-import ProtectedRoute from '../protectedRoutes/ProtectedRoute'
+import { createBrowserRouter } from "react-router-dom";
 
-const AppRoute = () => {
-  return (
-    <Routes> 
-    <Route element = {<PublicRoute/>}>
-        <Route path='/' element={<AuthLayout/>}>
-            <Route path='/' element={<Login/>}/>
-            <Route path='/register' element={<Register/>}/>
-        </Route>
-    </Route>
-    
-    <Route element={<ProtectedRoute/>}>
-        <Route path='/home' element={<DashBoardLayout/>}>
-            <Route path='' element={<Home/>}/>
-        </Route>
-    </Route>
-    </Routes>
-  )
-}
+import Login from "../../features/auth/ui/pages/Login";
+import Register from "../../features/auth/ui/pages/Register";
 
-export default AppRoute
+import AuthLayout from "../layouts/AuthLayout";
+import DashBoardLayout from "../layouts/DashBoardLayout";
+
+import PublicRoute from "../protectedRoutes/PublicRoute";
+import ProtectedRoute from "../protectedRoutes/ProtectedRoute";
+import { commonRoutes } from "./CommonRoutes";
+import RoleBaseRoute from "../protectedRoutes/RoleBaseRoute";
+import { adminRoutes } from "./AdminRoutes";
+import { employeeRoutes } from "./EmployeeRoutes";
+
+
+const router = createBrowserRouter([
+  {
+    element: <PublicRoute />,
+    children: [
+      {
+        path: "/",
+        element: <AuthLayout />,
+        children: [
+          {
+            index: true,
+            element: <Login />,
+          },
+          {
+            path: "register",
+            element: <Register />,
+          },
+        ],
+      },
+    ],
+  },
+
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path:"",
+        element: <DashBoardLayout />,
+        children: [
+            ...commonRoutes, 
+            {
+                element : <RoleBaseRoute allowedRoles={['admin']}/>,
+                children : adminRoutes,
+            },
+            {
+                element : <RoleBaseRoute allowedRoles={['employee']}/>,
+                children : employeeRoutes
+            }
+        ]
+      },
+    ],
+  },
+]);
+
+export default router;

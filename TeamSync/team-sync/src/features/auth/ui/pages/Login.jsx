@@ -25,7 +25,7 @@ const Login = () => {
             ✦
           </div>
 
-          <h1 className="mt-5 text-4xl font-semibold">Synthetix AI</h1>
+          <h1 className="mt-5 text-4xl font-semibold">Team Sync</h1>
 
           <p className="mt-2 text-sm text-zinc-400">
             Sign in to your workspace
