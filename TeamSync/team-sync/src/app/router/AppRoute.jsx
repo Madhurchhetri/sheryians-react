@@ -12,6 +12,7 @@ import { commonRoutes } from "./CommonRoutes";
 import RoleBaseRoute from "../protectedRoutes/RoleBaseRoute";
 import { adminRoutes } from "./AdminRoutes";
 import { employeeRoutes } from "./EmployeeRoutes";
+import Home from "../../features/dashboard/ui/pages/Home";
 
 
 const router = createBrowserRouter([
@@ -39,9 +40,13 @@ const router = createBrowserRouter([
     element: <ProtectedRoute />,
     children: [
       {
-        path:"",
+        path:"/home",
         element: <DashBoardLayout />,
         children: [
+           {
+      index: true,
+      element: <Home/>,
+    },
             ...commonRoutes, 
             {
                 element : <RoleBaseRoute allowedRoles={['admin']}/>,

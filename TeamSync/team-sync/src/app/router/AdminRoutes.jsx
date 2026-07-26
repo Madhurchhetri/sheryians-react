@@ -2,22 +2,32 @@ import Department from "../../features/admin module/departments/ui/pages/Departm
 import Document from "../../features/admin module/documents/ui/pages/Document";
 import Employee from "../../features/admin module/employees/ui/pages/Employee";
 import Task from "../../features/admin module/tasks/ui/pages/Task";
+import Chat from "../../features/chats/ui/pages/Chat";
+import Setting from "../../features/settings/ui/pages/Setting"
 
 export let adminRoutes = [
     {
-        path:"/home/employee",
+        path:"employee",
         element : <Employee/>
     },
     {
-        path:"/home/department",
+        path:"department",
         element : <Department/>
     },
     {
-        path:"/home/task",
+        path:"task",
         element : <Task/>
     },
     {
-        path:"/home/document",
+        path: "chat",
+        element : <Chat/>
+    },
+     {
+        path: "setting",
+        element : <Setting/>
+    },
+    {
+        path:"document",
         element : <Document/>
     },
 ];

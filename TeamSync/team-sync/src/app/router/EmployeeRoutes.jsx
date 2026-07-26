@@ -4,15 +4,15 @@ import Profile from "../../features/employee module/profile/ui/pages/Profile";
 
 export let employeeRoutes = [
     {
-        path:"/home/myTask",
+        path:"myTask",
         element :<MyTask/>
     },
     {
-        path:"/home/attendence",
+        path:"attendence",
         element :<Attendence/>
     },
     {
-        path:"/home/profile",
+        path:"profile",
         element :<Profile/>
     }
 ]
