@@ -10,9 +10,9 @@ const AsideNav = () => {
   let navigations = employee?.role === "admin" ? adminNavigation : employeeNavigation
   return (
     <>
-        <div className='flex flex-col gap-1'>
-            <h1 className='text-2xl font-semibold text-[#CAB8F9]'>team-sync</h1>
-            <p className='text-sm  text-var[(--textPrimary)]'>Enterprise workspace</p>
+        <div className='flex flex-col gap-1 p-4'>
+            <h1 className='text-3xl font-semibold text-[#CAB8F9]'>team-sync</h1>
+            <p className='text-sm text-[var(--text-secondary)]'>Enterprise workspace</p>
         </div>
         <div className='flex flex-col gap-3'>
             {

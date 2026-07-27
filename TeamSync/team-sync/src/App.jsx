@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import AppRoute from './app/router/AppRoute'
 import { useDispatch } from 'react-redux'
 import { currentLoggedEmployee } from './features/auth/state/auth/authAction'
 import { RouterProvider } from 'react-router-dom'

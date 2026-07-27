@@ -2,7 +2,7 @@ import React from 'react'
 
 const Document = () => {
   return (
-    <div className='h-screen text-black'>
+    <div>
       <h1>document page</h1>
     </div>
   )

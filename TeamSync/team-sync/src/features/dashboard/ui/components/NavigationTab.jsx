@@ -3,7 +3,12 @@ import { NavLink } from 'react-router-dom'
 
 const NavigationTab = ({path , title , Icon}) => {
   return (
-    <NavLink className={({isActive})=>`flex gap-3 pl-2 py-2 ${isActive ? ' border-[var(--bg-primary)] border-r-4 bg-[var(--secondary)]' : ''}`} 
+    <NavLink className={({isActive})=>`flex gap-3 pl-2 py-2 ${
+    isActive
+     ? ' border-r-4 border-[var(--bg-primary)] bg-[var(--secondary)]'
+      : ''
+      }`
+      } 
         to={path}
         end= "/"
         >

@@ -29,14 +29,16 @@ export let loginEmployee = createAsyncThunk(
 
 
 export let currentLoggedEmployee = createAsyncThunk(
-    'auth/me',
-    async (_,thunkApi)=>{
-        try{
-            let res = await axiosInstance.get('/auth/me');
-            console.log(res.data.data.user);
-            return res.data.data.user;
-        }catch(error){
-            return thunkApi.rejectWithValue(error);
-        }
+  "auth/me",
+  async (_, thunkApi) => {
+    try {
+      let res = await axiosInstance.get("/auth/me");
+
+      console.log(res.data);
+
+      return res.data.user;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error);
     }
-)
+  }
+);

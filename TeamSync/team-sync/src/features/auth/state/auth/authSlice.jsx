@@ -58,6 +58,7 @@ let authSlice = createSlice({
   initialState: {
     employee: null,
     isLoading: false,
+     isAuthChecked: false,
   },
 
   reducers: {
@@ -102,14 +103,14 @@ let authSlice = createSlice({
     // CURRENT USER
     builder
       .addCase(currentLoggedEmployee.pending, (state) => {
-        state.isLoading = true;
+        state.isAuthChecked = false;
       })
       .addCase(currentLoggedEmployee.fulfilled, (state, action) => {
         state.employee = action.payload;
-        state.isLoading = false;
+        state.isAuthChecked = true;
       })
       .addCase(currentLoggedEmployee.rejected, (state) => {
-        state.isLoading = false;
+        state.isAuthChecked = true;
       });
   },
 });
