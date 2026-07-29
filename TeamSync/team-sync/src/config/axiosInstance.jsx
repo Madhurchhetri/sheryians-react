@@ -7,14 +7,14 @@ export let axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
   (response) => {
-    console.log("✅ API SUCCESS:", response.config.url);
+    // console.log("✅ API SUCCESS:", response.config.url);
     return response;
   },
 
   async (error) => {
-    console.log("❌ API ERROR:", error.config?.url);
-    console.log("❌ STATUS:", error.response?.status);
-    console.log("❌ DATA:", error.response?.data);
+    // console.log("❌ API ERROR:", error.config?.url);
+    // console.log("❌ STATUS:", error.response?.status);
+    // console.log("❌ DATA:", error.response?.data);
 
     let originalReq = error.config;
 
@@ -30,11 +30,11 @@ axiosInstance.interceptors.response.use(
 
         return axiosInstance(originalReq);
       } catch (refreshError) {
-        console.log("❌ ACCESS TOKEN REFRESH FAILED:");
-        console.log(refreshError.response?.status);
-        console.log(refreshError.response?.data);
+        // console.log("❌ ACCESS TOKEN REFRESH FAILED:");
+        // console.log(refreshError.response?.status);
+        // console.log(refreshError.response?.data);
 
-        window.location.href = "/";
+        // window.location.href = "/";
         return Promise.reject(refreshError);
       }
     }

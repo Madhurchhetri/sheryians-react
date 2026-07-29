@@ -1,5 +1,6 @@
 import Department from "../../features/admin module/departments/ui/pages/Department";
 import Document from "../../features/admin module/documents/ui/pages/Document";
+import AddEmployee from "../../features/admin module/employees/ui/pages/AddEmployee";
 import Employee from "../../features/admin module/employees/ui/pages/Employee";
 import Task from "../../features/admin module/tasks/ui/pages/Task";
 import Chat from "../../features/chats/ui/pages/Chat";
@@ -8,7 +9,11 @@ import Setting from "../../features/settings/ui/pages/Setting"
 export let adminRoutes = [
     {
         path:"employee",
-        element : <Employee/>
+        element : <Employee/>,
+    },
+    {
+        path: "add-employee",
+        element : <AddEmployee/>
     },
     {
         path:"department",
