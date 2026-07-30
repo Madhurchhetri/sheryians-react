@@ -16,6 +16,8 @@ const Employee = () => {
     isFetching,
     filters,
     handleSearchFilters,
+    handleDeleteEmployee,
+    isDeleting,
   } = useEmployee();
   console.log("filters", filters);
 
@@ -40,7 +42,11 @@ const Employee = () => {
 
           {isFetching && <h1>Loading next page data</h1>}
 
-          <EmployeeTable employees={data?.employees} />
+          <EmployeeTable
+          employees={data?.employees}
+          onDelete={handleDeleteEmployee}
+          isDeleting={isDeleting}
+        />
 
           <Pagination
             pagination={data?.pagination}

@@ -6,11 +6,13 @@
 import { useEffect, useRef, useState } from "react";
 
 import { MoreVertical, Pencil, Trash2, UserX } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const EmployeeActions = ({ onEdit, onDelete, onInactive, employee }) => {
   const [open, setOpen] = useState(false);
 
   const dropdownRef = useRef();
+  const navigate = useNavigate();
 
   // CLOSE ON OUTSIDE CLICK
   useEffect(() => {
@@ -43,7 +45,7 @@ const EmployeeActions = ({ onEdit, onDelete, onInactive, employee }) => {
           {/* UPDATE */}
           <button
             onClick={() => {
-              onEdit?.();
+              navigate(`/home/add-employee?edit=${employee._id}`);
               setOpen(false);
             }}
             className="w-full h-12 px-4 rounded-xl flex items-center gap-3 hover:bg-[var(--bg-hover)] transition-all text-[var(--text-primary)]"

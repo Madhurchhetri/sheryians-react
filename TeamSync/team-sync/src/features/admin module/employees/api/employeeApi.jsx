@@ -39,4 +39,23 @@ export let updateEmployee = async (empId, data) => {
   }
 };
 
+export let deleteEmployee = async (empId) => {
+  try {
+    let res = await axiosInstance.delete(`/employee/delete/${empId}`);
+    console.log(res);
+    return res.data.data;
+  } catch (error) {
+    console.log("Error in delete employee api", error);
+  }
+};
+
+export const getEmployeeById = async (empId) => {
+  try {
+    const res = await axiosInstance.get(`/employee/${empId}`);
+    return res.data.data;
+  } catch (error) {
+    console.log("Error in get employee api", error);
+  }
+};
+
 getAllEmployees();

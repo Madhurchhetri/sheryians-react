@@ -2,7 +2,7 @@ import { updateEmployee } from "../../../api/employeeApi";
 import EmployeeActions from "./EmployeeActions";
 import StatusBadge from "./StatusBadge";
 
-const EmployeeRow = ({ employee }) => {
+const EmployeeRow = ({ employee ,onDelete, isDeleting }) => {
   return (
     <tr className="border-b border-[var(--border-color)]">
       {/* PROFILE */}
@@ -54,7 +54,9 @@ const EmployeeRow = ({ employee }) => {
         <EmployeeActions
           employee={employee}
           onEdit={() => console.log("Edit", employee)}
-          onDelete={() => console.log("Delete", employee)}
+          onDelete={() => {
+            onDelete(employee._id);
+          }}
           onInactive={async () => {
             if (
               employee.status === "inactive"

@@ -1,7 +1,7 @@
 import EmployeeRow from "./EmployeeRow";
 
 
-const EmployeeTable = ({ employees }) => {
+const EmployeeTable = ({ employees , onDelete, isDeleting  }) => {
   return (
     <div className="overflow-x-auto">
 
@@ -41,10 +41,12 @@ const EmployeeTable = ({ employees }) => {
 
         <tbody>
 
-          {employees.map((employee) => (
+          {employees?.map((employee) => (
             <EmployeeRow
               key={employee._id}
               employee={employee}
+              onDelete={onDelete}
+              isDeleting={isDeleting}
             />
           ))}
 

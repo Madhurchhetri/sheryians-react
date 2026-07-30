@@ -1,6 +1,6 @@
-import { UserPlus } from "lucide-react";
+import { UserPlus , Pencil } from "lucide-react";
 
-const FormActions = () => {
+const FormActions = ({isEditMode}) => {
   return (
     <div className="flex items-center justify-end gap-5 mt-10">
 
@@ -15,9 +15,13 @@ const FormActions = () => {
         type="submit"
         className="px-8 h-16 rounded-2xl bg-[var(--primary)] text-white flex items-center gap-3"
       >
-        <UserPlus size={20} />
+        {isEditMode ? (
+          <Pencil size={20} />
+        ) : (
+          <UserPlus size={20} />
+        )}
 
-        Create Employee
+        {isEditMode ? "Update Employee" : "Create Employee"}
       </button>
 
     </div>
